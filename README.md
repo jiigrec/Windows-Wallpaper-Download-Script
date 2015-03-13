@@ -23,4 +23,6 @@ Copiez le fichier dans un dossier quelconque, ouvrez une ligne de commande dans 
 perl wallpaper_fr.pl
 ```
 
+##Credits / Crédits
+
 Jean-Yves RODA
