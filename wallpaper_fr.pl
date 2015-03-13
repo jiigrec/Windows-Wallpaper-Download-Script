@@ -1,8 +1,6 @@
 #use stricts;
 use warnings;
-
 use LWP::Simple;
-
 my $imageTitre;
 my $index;
 my $base;
@@ -28,18 +26,14 @@ chomp $adress;
 print "Début du téléchargement.\n";
 getstore($adress, 'wallpaper.html');
 print "Téléchargement terminé\n";
-
-
 open(my $fh, '<', 'wallpaper.html') or die "Impossible d'ouvrir le fichier !\nMauvais lien ?\n";
-
 print "Début de lecture du fichier html.\n";
-
 while (my $line = <$fh>)
 {
 	$index = index($line, 'galleryGrid');
 	$base = -1;
 	if ($index != $base)
-	{	
+	{
 		$verif = 1;
 		$imageLine = $line;
 		$index2 = index($line, 'headingM');
@@ -57,7 +51,7 @@ while (my $line = <$fh>)
 			$index5 = index($imageLien, '>');
 			$val4 = $index5 - 1;
 			$imageLien = substr($imageLien, 0, $val4);
-			print "Lien de téléchargement: $imageLien\n";
+			#print "Lien de téléchargement: $imageLien\n";
 			print "Début du téléchargement.\n";
 			$file = $imageTitre . ".jpg";
 			getstore($imageLien, $file);
@@ -74,5 +68,6 @@ if($verif == 0)
 {
 	print "Aucune image trouvée !\nMauvais lien ?\n";
 }
-
 close $fh;
+
+
