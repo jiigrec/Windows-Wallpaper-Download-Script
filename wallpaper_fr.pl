@@ -18,6 +18,18 @@ my $file;
 my $val4;
 my $adress;
 my $verif = 0;
+my $osname = $^O;
+my $path;
+
+
+if ($osname = "MSWin32")
+{
+	$path = "Wallpapers\\";
+}
+else
+{
+	$path = "Wallpapers/"
+}
 
 
 print "Outil de téléchargement de fonds d'écran Windows\nPar Jean-Yves Roda, c 1999-2015\n\nEntrez l'adresse de la page de téléchargement des fonds d'écrans Windows:\nEx: http://windows.microsoft.com/fr-fr/windows/wallpaper?T1=places\n";
@@ -53,7 +65,7 @@ while (my $line = <$fh>)
 			$imageLien = substr($imageLien, 0, $val4);
 			#print "Lien de téléchargement: $imageLien\n";
 			print "Début du téléchargement.\n";
-			$file = $imageTitre . ".jpg";
+			$file = $path . $imageTitre . ".jpg";
 			getstore($imageLien, $file);
 			print "Téléchargement terminé.\n";
 			$imageLine = substr($imageLine, $val3);
