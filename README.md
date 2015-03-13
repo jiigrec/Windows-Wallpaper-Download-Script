@@ -14,13 +14,13 @@ Pour la version française, utilisez le fichier wallpaper_fr.pl. Ce script est c
 ##Install / Installation
 
 Copy the file in any directory, open a command-line in that directory and type:
-'''
+```
 perl wallpaper_en.pl
-'''
+```
 
 Copiez le fichier dans un dossier quelconque, ouvrez une ligne de commande dans ce doosier et tapez:
-'''
+```
 perl wallpaper_fr.pl
-'''
+```
 
 Jean-Yves RODA
